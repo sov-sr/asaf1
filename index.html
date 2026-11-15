@@ -1,38 +1,12 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASAF | Hukuk Asistanı</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
-
-  <!-- ===== Login ===== -->
-  <div id="loginScreen" class="login-screen">
-    <div class="login-card">
-      <div class="logo">ASAF</div>
-      <p class="subtitle" data-i18n="subtitle">İstinaf Dilekçesi Asistanı</p>
-      <input type="email" id="email" placeholder="E-posta" data-i18n-ph="email" />
-      <input type="password" id="password" placeholder="Şifre" data-i18n-ph="password" />
-      <button id="loginBtn" data-i18n="login">Giriş Yap</button>
-      <p id="loginError" class="error"></p>
-      <div class="lang-switch">
-        <button data-lang="tr" class="active">TR</button>
-        <button data-lang="ar">AR</button>
-      </div>
-    </div>
-  </div>
-
   <!-- ===== App ===== -->
-  <div id="appScreen" class="app-screen hidden">
+  <div id="appScreen" class="app-screen">
     <header class="topbar">
       <div class="logo-small">ASAF</div>
       <div class="topbar-actions">
         <button data-lang="tr" class="lang-btn active">TR</button>
         <button data-lang="ar" class="lang-btn">AR</button>
         <button id="newChatBtn" data-i18n="newChat">Yeni Sohbet</button>
-        <button id="logoutBtn" data-i18n="logout">Çıkış</button>
       </div>
     </header>
 
@@ -68,6 +42,8 @@
     </main>
   </div>
 
+  <script src="app.js"></script>
+</body>
   <script src="app.js"></script>
 </body>
 </html>
