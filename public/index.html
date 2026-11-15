@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASAF | Hukuk Asistanı</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Login ===== -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <div class="logo">ASAF</div>
+      <p class="subtitle" data-i18n="subtitle">İstinaf Dilekçesi Asistanı</p>
+      <input type="email" id="email" placeholder="E-posta" data-i18n-ph="email" />
+      <input type="password" id="password" placeholder="Şifre" data-i18n-ph="password" />
+      <button id="loginBtn" data-i18n="login">Giriş Yap</button>
+      <p id="loginError" class="error"></p>
+      <div class="lang-switch">
+        <button data-lang="tr" class="active">TR</button>
+        <button data-lang="ar">AR</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== App ===== -->
+  <div id="appScreen" class="app-screen hidden">
+    <header class="topbar">
+      <div class="logo-small">ASAF</div>
+      <div class="topbar-actions">
+        <button data-lang="tr" class="lang-btn active">TR</button>
+        <button data-lang="ar" class="lang-btn">AR</button>
+        <button id="newChatBtn" data-i18n="newChat">Yeni Sohbet</button>
+        <button id="logoutBtn" data-i18n="logout">Çıkış</button>
+      </div>
+    </header>
+
+    <main class="chat-container">
+      <aside class="sidebar">
+        <h3 data-i18n="chats">Sohbetler</h3>
+        <ul id="convList"></ul>
+      </aside>
+
+      <section class="chat-main">
+        <div id="chatMessages" class="chat-messages">
+          <div class="welcome">
+            <h2 data-i18n="welcomeTitle">ASAF'a Hoş Geldiniz</h2>
+            <p data-i18n="welcomeText">Mahkeme kararını yapıştırın, fotoğrafını yükleyin veya olayı anlatın.</p>
+            <p class="warning" data-i18n="welcomeWarn">
+              ⚠️ Bu araç taslak üretir. Sunmadan önce avukata danışın. İstinaf süresi: 14 gün (hukuk/ceza) veya 30 gün (idari).
+            </p>
+          </div>
+        </div>
+
+        <div class="composer">
+          <textarea id="userInput" rows="3" data-i18n-ph="placeholder"></textarea>
+          <div class="composer-actions">
+            <label class="upload-btn">
+              <span data-i18n="photo">📎 Fotoğraf</span>
+              <input type="file" id="imageInput" accept="image/*" hidden />
+            </label>
+            <button id="sendBtn" class="btn-primary" data-i18n="send">Gönder</button>
+          </div>
+          <div id="imagePreview" class="image-preview hidden"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
